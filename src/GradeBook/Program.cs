@@ -12,7 +12,7 @@ namespace GradeBook
             }
             else
             {
-                Console.WriteLine("Hello!");    
+                Console.WriteLine("Hello! Git test");    
             }
         }
     }
