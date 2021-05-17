@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GradeBook
 {
@@ -6,14 +7,23 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            if(args.Length > 0)
+            var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1};
+            grades.Add(56.1);
+
+            var result = 0.0;
+            var average = 0.0;
+            var numberOfGrades = 0;
+
+            foreach(double grade in grades)
             {
-                Console.WriteLine($"Hello, {args[0]}!");
+                result += grade;
+                numberOfGrades = grades.Count;
+                average = result / numberOfGrades;
             }
-            else
-            {
-                Console.WriteLine("Hello! Git 2nd test");    
-            }
+
+            Console.WriteLine($"Sum = {result}");
+            System.Console.WriteLine($"Grade Count = {numberOfGrades}");
+            System.Console.WriteLine($"Average = {average:N1}");
         }
     }
 }
