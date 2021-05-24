@@ -58,7 +58,7 @@ namespace GradeBook
         {
             Console.WriteLine($"Highest Grade = {HighGrade()}");
             Console.WriteLine($"Lowest Grade = {LowGrade()}");
-            Console.WriteLine($"Average = {Average():N2}");
+            Console.WriteLine($"Average = {Average():N3}");
         }
 
         List<double> grades;
