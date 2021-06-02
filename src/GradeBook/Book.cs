@@ -54,11 +54,23 @@ namespace GradeBook
             return average;
         }
 
-        public void ShowStatistics()
+        public Statistics GetStatistics()
         {
-            Console.WriteLine($"Highest Grade = {HighGrade()}");
-            Console.WriteLine($"Lowest Grade = {LowGrade()}");
-            Console.WriteLine($"Average = {Average():N3}");
+            var result = new Statistics();
+            result.Average = 0.0;
+            result.High = double.MinValue;
+            result.Low = double.MaxValue;
+
+            foreach(var grade in grades)
+            {
+                result.Low = Math.Min(grade, result.Low);
+                result.High = Math.Max(grade, result.High);
+                result.Average += grade;
+            }
+
+            result.Average /= grades.Count;
+
+            return result;
         }
 
         List<double> grades;
